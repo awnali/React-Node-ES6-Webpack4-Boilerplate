@@ -1,2 +1,2 @@
 # React-Node-ES6-Webpack4-Boilerplate
-Kickstarter project for Client in ReactJS and server in NodeJs with ES6, Babel7 and webPack4 support. 
+Kickstarter project for ReactJS Client in and NodeJs server with ES6, Babel7 and WebPack4 support. 
