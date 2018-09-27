@@ -5,13 +5,14 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --mode production --module-bind js=babel-loader && npm run build-server",
+    "build": "webpack --mode production --module-bind js=babel-loader && babel ./src --out-dir ./dist ",
     "build-server": "babel ./src/server --out-dir ./dist/server",
-    "start": "webpack-dev-server --mode development --open && npm run build-server",
+    "start": "webpack-dev-server --mode development --open",
     "client": "webpack-dev-server --mode development --devtool inline-source-map --hot",
-    "server": "nodemon dist/server/index.js",
+    "server": "nodemon src/server/index.js --exec babel-node",
     "run": "concurrently \"npm run server\" \"npm run client\"",
-    "dev": "npm-run-all build-server run"
+    "dev": "npm-run-all build-server run",
+    "server-dev": "npm-run-all build-server server"
   },
   "author": "",
   "license": "ISC",
